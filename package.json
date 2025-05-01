@@ -1,0 +1,23 @@
+{
+  "name": "pi-iii",
+  "version": "1.0.0",
+  "description": "## Documentação do projeto base: https://evershop.io/docs/development/getting-started/introduction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "evershop install",
+    "build": "evershop build",
+    "start": "evershop start",
+    "dev": "evershop dev",
+    "start:debug": "evershop start --debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.26.10",
+    "@evershop/evershop": "^1.2.1"
+  },
+  "workspaces": [
+    "extensions/*"
+  ]
+}

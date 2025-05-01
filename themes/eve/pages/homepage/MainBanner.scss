@@ -1,0 +1,46 @@
+.main-banner-home {
+  background-image: url("/ONGs.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 500px;
+  position: relative;
+
+  .container {
+    z-index: 10;
+    text-align: center;
+    color: white; /* Garante que o texto fique branco */
+  }
+
+  .button {
+    margin-top: 40px;
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  h2.h1 {
+    color: white; /* Altera a cor do texto para branco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona sombra ao texto */
+    letter-spacing: 0.05rem;
+    font-size: 4rem;
+    line-height: 5rem;
+    @media screen and (min-width: 768px) {
+      font-size: 6rem;
+      line-height: 7rem;
+    }
+  }
+
+  /* Ajusta o subtítulo ou texto adicional */
+  p {
+    color: rgb(255, 255, 255); /* Deixa o texto branco */
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+    line-height: 1.8rem;
+  }
+
+
+}
+

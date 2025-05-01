@@ -1,0 +1,13 @@
+{
+  "shop": {
+    "currency": "BRL",
+    "language": "pt",
+    "weightUnit": "kg",
+    "homeUrl": "http://localhost:3000"
+  }, 
+  
+  "system": {
+    "theme": "eve"
+}
+
+}
