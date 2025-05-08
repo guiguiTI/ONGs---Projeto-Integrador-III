@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./MobileMenu.scss";
 
-export default function MobileMenu() {
+export default function MobileMenu({ menu: { items } }) {
   const [show, setShow] = React.useState(false);
 
   return (
@@ -29,24 +30,17 @@ export default function MobileMenu() {
       </a>
       {show && (
         <ul className="nav justify-content-center">
+          {items.map((i, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <li className="nav-item" key={index}>
+              <a className="nav-link" href={i.url}>
+                {i.name}
+              </a>
+            </li>
+          ))}
           <li className="nav-item">
-            <a className="nav-link" href="/sobre-nos">
-              Sobre Nós
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/causas">
-              Causas
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/ongs">
-              ONGs
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link hover:underline" href="/entrar">
-              Entrar/Inscrever
+            <a className="nav-link hover:underline" href={"/page/contact"}>
+              Contact
             </a>
           </li>
         </ul>
@@ -54,3 +48,29 @@ export default function MobileMenu() {
     </div>
   );
 }
+
+MobileMenu.propTypes = {
+  menu: PropTypes.shape({
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+};
+
+export const layout = {
+  areaId: "icon-wrapper",
+  sortOrder: 50,
+};
+
+export const query = `
+  query {
+    menu {
+      items {
+        name
+        url
+      }
+    }
+}`;
